@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+	
+<h1>我的第一个 Web 页面</h1>
+<p>我的第一个段落。</p>
+<p id="test1"></p>
+<script>
+function setTime(time){
+    if(time<10){
+        return "0"+time;
+    }
+    return time;
+}
+function theClock(){
+    var t=new Date();
+    var hours=setTime(t.getHours());
+    var minutes=setTime(t.getMinutes());
+    var sec=setTime(t.getSeconds());
+    document.getElementById("test1").innerHTML=hours+":"+minutes+":"+sec+"<br/>";
+    //document.write(hours+":"+minutes+":"+sec+"<br/>");
+    setTimeout("theClock()",1000);
+}
+theClock();
+document.write(Date());
+</script>
+	
+</body>
+</html>
